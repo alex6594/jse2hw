@@ -1,9 +1,12 @@
-import Board from './Board';
-import Goblin from './Goblin';
-import GamePlay from './GamePlay';
+import createCells from './cells';
+import setSize from './setSize';
+import definePosition from './definePosition';
+import timerClock from './timer';
 
-const board = new Board();
-const char = new Goblin();
-const gameplay = new GamePlay(board, char);
-
-gameplay.init();
+const size = setSize();
+const field = createCells(size);
+const body = document.querySelector('body');
+body.append(field);
+field.style.setProperty('--side', size);
+definePosition();
+timerClock();

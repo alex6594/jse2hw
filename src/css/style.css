@@ -1,40 +1,59 @@
 * {
-	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-	background-color:dimgray;
+    background-color: #999;
+    font-family: sans-serif;
+    font-size: 40px;
+    width: 100%;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: row;
 }
 
-.title {
-
-	text-align: center;
-	font-size: 2em;
-	color: #fff;
-}
-
-.board {
-	display: flex;
-	flex-wrap: wrap;
-	width: 70vmin;
-	height: 70vmin;
-	border: 1px solid black;
-	margin: 0 auto;
-	background-color: lemonchiffon;
+.field {
+    display: grid;
+    margin-left: 150px;
+    width: 600px;
+    height: 600px;
+    gap: 20px;
+    border: 2px solid goldenrod;
+    justify-items : stretch;
+    align-items: stretch;
+    grid-template-columns: repeat(var(--side), 1fr);
+    grid-template-rows:  repeat(var(--side), 1fr);
+    align-content : center;
+    justify-content: center;
 }
 
 .cell {
-	width: 25%;
-	height: 25%;
-	box-sizing: border-box;
-	border: 2px solid black;
+    background-color: rgb(242, 255, 0);
+    width: 100%;
+    display: grid;
+    border: 2px solid goldenrod;
 }
 
-.goblin {
-	width: 100%;
-	height: 100%;
-	background-image: url('../img/goblin.png');
-    background-repeat: no-repeat;
+.goblined {
+    background-image: url("../img/goblin.png");
     background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
+}
+
+.timerField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30px;
+    width: 200px;
+    height:  200px;
+    border: 2px solid rgb(0, 195, 255);
+}
+
+.note {
+    text-align: center;
 }
